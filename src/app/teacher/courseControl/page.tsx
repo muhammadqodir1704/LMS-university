@@ -153,7 +153,6 @@ const CourseControls = () => {
         isPublished: true,
         isFeatured: false,
       });
-      // Refresh courses list
       await fetchCourses();
     } catch (err: any) {
       setError(err.message || 'Failed to create course');
@@ -278,19 +277,19 @@ const CourseControls = () => {
                             onClick={() => handleDeleteCourse(course.id)}
                             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm transition-colors font-medium"
                           >
-                            🗑️ Delete
+                          Delete
                           </button>
                           <Link
                             href={`/teacher/courseControl/${course.id}`}
                             className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm transition-colors font-medium"
                           >
-                            ✏️ Edit
+                           Edit
                           </Link>
                           <Link
                             href={`/teacher/courseControl`}
                             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded text-sm transition-colors font-medium"
                           >
-                            👁️ View
+                          View
                           </Link>
                         </div>
                       </div>
