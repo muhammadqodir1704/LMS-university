@@ -1,7 +1,6 @@
 "use client";
-import '@ant-design/v5-patch-for-react-19';
 import { Card, Table, Tag, Space, Button } from "antd";
-import { CheckCircleOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { CheckCircle, ClockCircle } from "lucide-react";
 
 export default function AdminPayments() {
   const payments = [

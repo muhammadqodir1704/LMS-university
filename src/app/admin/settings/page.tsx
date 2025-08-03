@@ -1,6 +1,6 @@
 "use client";
 import '@ant-design/v5-patch-for-react-19';
-import { Card, Form, Input, Button, Switch, Select, Space, message } from "antd";
+import { Card, Form, Input, Button, Switch, Select, message } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 
 export default function AdminSettings() {

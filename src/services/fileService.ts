@@ -12,7 +12,7 @@ export async function uploadProfileImage(file: File): Promise<number> {
     credentials: "include",
   });
 
-  let data: any = {};
+  let data: { id?: number; message?: string } = {};
   try {
     data = await res.json();
   } catch {
@@ -21,6 +21,9 @@ export async function uploadProfileImage(file: File): Promise<number> {
 
   if (!res.ok) {
     throw new Error(data?.message || `Image Upload failed (${res.status})`);
+  }
+  if (!data.id) {
+    throw new Error('Upload failed: No file ID returned');
   }
   return data.id;
 }
@@ -39,7 +42,7 @@ export async function getUserFiles(userId: string | number) {
 }
 
 // Profil rasm ID’sini user profiliga biriktirish (PUT /api/users/me)
-export async function updateUserProfileWithImage(profileImageId: number, otherData: any = {}) {
+export async function updateUserProfileWithImage(profileImageId: number, otherData: Record<string, unknown> = {}) {
   const accessToken = getCookie("accessToken");
   const res = await fetch("https://api-lms-university.tenzorsoft.uz/api/users/me", {
     method: "PUT",

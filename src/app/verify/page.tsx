@@ -33,8 +33,8 @@ export default function VerifyPage() {
       if (!res.ok) throw new Error(data.message || "Verification failed");
 
       router.push("/Login");
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Verification failed');
     } finally {
       setLoading(false);
     }

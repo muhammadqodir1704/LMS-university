@@ -2,7 +2,7 @@
 import '@ant-design/v5-patch-for-react-19';
 import { useState, useEffect } from "react";
 import { Table, Button, Input, Space, Tag, Modal, Form, Select, message, Spin } from "antd";
-import { SearchOutlined, PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { PlusOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { getCookie } from "cookies-next";
 
 const { Search } = Input;

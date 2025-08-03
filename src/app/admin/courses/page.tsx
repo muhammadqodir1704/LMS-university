@@ -2,7 +2,7 @@
 import { useState } from "react";
 import '@ant-design/v5-patch-for-react-19';
 import { Table, Button, Input, Space, Tag, Modal, Form, Select, message, Card, Row, Col } from "antd";
-import { SearchOutlined, PlusOutlined, EditOutlined, DeleteOutlined, BookOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
 const { TextArea } = Input;
@@ -185,7 +185,6 @@ export default function AdminCourses() {
 
   const totalStudents = courses.reduce((sum, course) => sum + course.students, 0);
   const totalRevenue = courses.reduce((sum, course) => sum + course.price, 0);
-  const activeCourses = courses.filter(course => course.status === "active").length;
 
   return (
     <div className="w-full">
@@ -223,7 +222,7 @@ export default function AdminCourses() {
         />
         <Button
           type="primary"
-          icon={<PlusOutlined />}
+          icon={<EditOutlined />}
           onClick={() => {
             setEditingCourse(null);
             form.resetFields();

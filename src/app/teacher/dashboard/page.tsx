@@ -55,8 +55,8 @@ export default function TeacherDashboard() {
       } else {
         setError(response.message || 'Failed to fetch courses');
       }
-    } catch (err: any) {
-      setError(err.message || 'Failed to fetch courses');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch courses');
     } finally {
       setFetchLoading(false);
     }
@@ -203,6 +203,7 @@ export default function TeacherDashboard() {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
                           }}
+                          loading="lazy"
                         />
                       </div>
                     )}

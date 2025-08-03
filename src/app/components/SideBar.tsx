@@ -63,8 +63,6 @@ function Sidebar({ role }: { role: Role }) {
   const [open, setOpen] = useState(false);
   const { setLoading } = useLoading();
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
   const handleLinkClick = () => {
     setLoading(true);
     setOpen(false);

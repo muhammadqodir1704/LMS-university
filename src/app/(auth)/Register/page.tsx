@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Spinner from "@/app/components/Spinner";
+import type { MenuProps } from "antd";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -22,53 +23,13 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleRoleChange = (role: string) => {
     setFormData({ ...formData, role });
-  };
-
-  const roleItems: MenuProps['items'] = [
-    {
-      key: 'STUDENT',
-      label: (
-        <div onClick={() => handleRoleChange('STUDENT')}>
-          Student
-        </div>
-      ),
-    },
-    {
-      key: 'TEACHER',
-      label: (
-        <div onClick={() => handleRoleChange('TEACHER')}>
-          Teacher
-        </div>
-      ),
-    },
-    {
-      key: 'ADMIN',
-      label: (
-        <div onClick={() => handleRoleChange('ADMIN')}>
-          Admin
-        </div>
-      ),
-    },
-  ];
-
-  const getRoleDisplayName = (role: string) => {
-    switch (role) {
-      case 'STUDENT':
-        return 'Student';
-      case 'TEACHER':
-        return 'Teacher';
-      case 'ADMIN':
-        return 'Admin';
-      default:
-        return 'Student';
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

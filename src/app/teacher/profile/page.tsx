@@ -4,7 +4,15 @@ import { getCurrentUser, updateProfileImage } from "@/services/authService";
 import { uploadProfileImage } from "@/services/fileService";
 
 const TeacherProfilePage = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    age: number;
+    roles: string[];
+    profileImageId?: string;
+  } | null>(null);
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
 
@@ -48,6 +56,7 @@ const TeacherProfilePage = () => {
             src={`https://api-lms-university.tenzorsoft.uz/api/file/${user.profileImageId}`}
             alt="Profile"
             className="w-24 h-24 rounded-full object-cover border border-gray-300"
+            loading="lazy"
           />
         ) : (
           <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 border border-gray-300">

@@ -354,8 +354,8 @@ const TeacherStream = () => {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h4 className="font-medium text-blue-800 mb-2">📋 OBS Setup Instructions:</h4>
           <ol className="list-decimal list-inside space-y-1 text-sm text-blue-700">
-            <li>OBS Studio ni o'rnating</li>
-            <li>Settings → Stream bo'limiga o'ting</li>
+            <li>OBS Studio ni o&apos;rnating</li>
+            <li>Settings → Stream bo&apos;limiga o&apos;ting</li>
             <li>Service: Custom tanlang</li>
             <li>Server: RTMP URL ni kiriting</li>
             <li>Stream Key: API dan olingan key ni kiriting</li>
