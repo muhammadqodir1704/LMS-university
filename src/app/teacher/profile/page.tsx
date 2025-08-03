@@ -37,7 +37,9 @@ const TeacherProfilePage = () => {
     try {
       const uploadedId = await uploadProfileImage(file);
       await updateProfileImage(String(uploadedId));
-      setUser({ ...user, profileImageId: uploadedId });
+      if (user) {
+        setUser({ ...user, profileImageId: String(uploadedId) });
+      }
     } catch (error) {
       console.error("Image upload failed:", error);
     } finally {
@@ -70,11 +72,11 @@ const TeacherProfilePage = () => {
         </div>
       </div>
       <div className="space-y-2 text-sm">
-        <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
-        <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Phone:</strong> {user.phone}</p>
-        <p><strong>Age:</strong> {user.age}</p>
-        <p><strong>Role:</strong> {user.roles?.join(", ")}</p>
+        <p><strong>Name:</strong> {user?.firstName} {user?.lastName}</p>
+        <p><strong>Email:</strong> {user?.email}</p>
+        <p><strong>Phone:</strong> {user?.phone}</p>
+        <p><strong>Age:</strong> {user?.age}</p>
+        <p><strong>Role:</strong> {user?.roles?.join(", ")}</p>
       </div>
     </div>
   );

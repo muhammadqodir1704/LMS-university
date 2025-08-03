@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Spinner from "@/app/components/Spinner";
-import type { MenuProps } from "antd";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -26,10 +25,6 @@ export default function RegisterPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleRoleChange = (role: string) => {
-    setFormData({ ...formData, role });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

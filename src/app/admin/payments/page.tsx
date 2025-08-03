@@ -1,6 +1,6 @@
 "use client";
 import { Card, Table, Tag, Space, Button } from "antd";
-import { CheckCircle, ClockCircle } from "lucide-react";
+import { CheckCircle, Clock } from "lucide-react";
 
 export default function AdminPayments() {
   const payments = [
@@ -49,7 +49,7 @@ export default function AdminPayments() {
       render: (status: string) => (
         <Tag 
           color={status === "completed" ? "green" : "orange"}
-          icon={status === "completed" ? <CheckCircle /> : <ClockCircle />}
+          icon={status === "completed" ? <CheckCircle /> : <Clock />}
         >
           {status === "completed" ? "To'langan" : "Kutilmoqda"}
         </Tag>
