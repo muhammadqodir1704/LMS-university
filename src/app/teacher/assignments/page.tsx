@@ -1,0 +1,24 @@
+'use client';
+import { Breadcrumb } from "antd";
+import Link from "next/link";
+import { useLoading } from "@/app/components/LoadingProvider";
+
+export default function AssignmentsPage() {
+  const { loading } = useLoading();
+  return (
+    <div className="w-full">
+      <Breadcrumb
+        separator=""
+        items={[
+          { title: <Link href="/teacher/dashboard">Dashboard</Link> },
+          { type: "separator" },
+          { title: "Assignments" },
+        ]}
+      />
+      {/* Faqat asosiy kontentni loading bilan o'rab qo'yamiz */}
+      {!loading && <div>Teacher Assignments</div>}
+    </div>
+  );
+}
+
+
