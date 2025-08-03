@@ -16,8 +16,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("theme") as Theme | null;
       if (stored) return stored;
-      // OS default
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+      // Always default to light mode
+      return "light";
     }
     return "light";
   });

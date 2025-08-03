@@ -155,6 +155,10 @@
     color: var(--foreground);
     transition: background-color 0.4s, color 0.4s;
   }
+  /* Force light mode by default */
+  html {
+    color-scheme: light;
+  }
   html.dark body {
     background-color: var(--background) !important;
     color: var(--foreground) !important;
